@@ -43,25 +43,27 @@ int GetCountElemLimitLenght(string[] array, int limit = 3)
     return result_array_length;
 }
 
-int j = 0;
-
 string[] array_input = { "Hello", "2", "world", ":-)" };
 // string[] array_input = { "1234", "1567", "-2", "computer science" };
 // string[] array_input = { "Russia", "Denmark”", "Kazan" };
 
-int result_array_length = GetCountElemLimitLenght(array_input);
-
-var result_array = new string[result_array_length];
-
-for (int i = 0; i < array_input.Length; i++)
+string[] GetArrayElemLimitLenghtFromArray(string[] array, int length)
 {
-    if (array_input[i].Length <= 3)
+    var result_array = new string[length];
+    int j = 0;
+    for (int i = 0; i < array.Length; i++)
     {
-        result_array[j] = array_input[i];
-        j++;
+        if (array[i].Length <= 3)
+        {
+            result_array[j] = array[i];
+            j++;
+        }
     }
+    return result_array;
 }
 
-// PrintArray(result_array);
+var result_array = GetArrayElemLimitLenghtFromArray(array_input, GetCountElemLimitLenght(array_input));
 
-PrintArray(GetStringArrayFromConsole());
+PrintArray(result_array);
+
+// PrintArray(GetStringArrayFromConsole());
