@@ -5,8 +5,6 @@
 // [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 // [“Russia”, “Denmark”, “Kazan”] → []
 
-// var array_input = {“Hello”, “2”, “world”, “:-)”};
-
 void PrintArray(string[] array)
 {
     var output_strint = "[";
@@ -18,6 +16,18 @@ void PrintArray(string[] array)
     output_strint += "]";
 
     Console.WriteLine(output_strint);
+}
+
+string[] GetStringArrayFromConsole()
+{
+    Console.WriteLine("Сколько будет элементов?");
+    int length = Convert.ToInt32(Console.ReadLine());
+    var result_array = new string[length];
+    for (int i = 0; i < length; i++)
+    {
+        result_array[i] = Convert.ToString(Console.ReadLine());
+    }
+    return result_array;
 }
 
 string[] array_input = { "Hello", "2", "world", ":-)" };
