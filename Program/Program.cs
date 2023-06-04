@@ -14,7 +14,6 @@ void PrintArray(string[] array)
         else output_strint += $"“{array[i]}”";
     }
     output_strint += "]";
-
     Console.WriteLine(output_strint);
 }
 
@@ -25,6 +24,7 @@ string[] GetStringArrayFromConsole()
     var result_array = new string[length];
     for (int i = 0; i < length; i++)
     {
+        Console.Write("Введите строку: ");
         result_array[i] = Convert.ToString(Console.ReadLine());
     }
     return result_array;
@@ -56,4 +56,6 @@ for (int i = 0; i < array_input.Length; i++)
     }
 }
 
-PrintArray(result_array);
+// PrintArray(result_array);
+
+PrintArray(GetStringArrayFromConsole());
