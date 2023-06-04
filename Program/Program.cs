@@ -7,10 +7,25 @@
 
 // var array_input = {“Hello”, “2”, “world”, “:-)”};
 
-int result_array_length = 0;
-int j = 0;
+void PrintArray(string[] array)
+{
+    var output_strint = "[";
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (i < array.Length - 1) output_strint += $"“{array[i]}”, ";
+        else output_strint += $"“{array[i]}”";
+    }
+    output_strint += "]";
+
+    Console.WriteLine(output_strint);
+}
 
 string[] array_input = { "Hello", "2", "world", ":-)" };
+// string[] array_input = { "1234", "1567", "-2", "computer science" };
+// string[] array_input = { "Russia", "Denmark”", "Kazan" };
+
+int result_array_length = 0;
+int j = 0;
 
 for (int i = 0; i < array_input.Length; i++)
 {
@@ -30,3 +45,5 @@ for (int i = 0; i < array_input.Length; i++)
         j++;
     }
 }
+
+PrintArray(result_array);
