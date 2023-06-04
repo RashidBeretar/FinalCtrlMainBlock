@@ -43,10 +43,6 @@ int GetCountElemLimitLenght(string[] array, int limit = 3)
     return result_array_length;
 }
 
-string[] array_input = { "Hello", "2", "world", ":-)" };
-// string[] array_input = { "1234", "1567", "-2", "computer science" };
-// string[] array_input = { "Russia", "Denmark”", "Kazan" };
-
 string[] GetArrayElemLimitLenghtFromArray(string[] array, int length)
 {
     var result_array = new string[length];
@@ -62,8 +58,18 @@ string[] GetArrayElemLimitLenghtFromArray(string[] array, int length)
     return result_array;
 }
 
-var result_array = GetArrayElemLimitLenghtFromArray(array_input, GetCountElemLimitLenght(array_input));
+void FinalMethod()
+{
+    // string[] array_input = { "Hello", "2", "world", ":-)" };
+    // string[] array_input = { "1234", "1567", "-2", "computer science" };
+    // string[] array_input = { "Russia", "Denmark”", "Kazan" };
+    var array_input = GetStringArrayFromConsole();
+    Console.WriteLine();
+    Console.WriteLine("Исходный массив: ");
+    PrintArray(array_input);
+    Console.WriteLine();
+    Console.WriteLine("Результат: ");
+    PrintArray(GetArrayElemLimitLenghtFromArray(array_input, GetCountElemLimitLenght(array_input)));
+}
 
-PrintArray(result_array);
-
-// PrintArray(GetStringArrayFromConsole());
+FinalMethod();
